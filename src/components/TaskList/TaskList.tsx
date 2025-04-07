@@ -3,7 +3,7 @@ import TaskRow from "../TaskRow/TaskRow.tsx";
 import {useTasks} from "../../hooks/useTasks.ts";
 
 const TaskList: React.FC = () => {
-    const { tasks, input, setInput, addTask } = useTasks();
+    const { tasks, input, setInput, addTask, toggleTask } = useTasks();
 
     return (
         <div>
@@ -22,6 +22,7 @@ const TaskList: React.FC = () => {
                     <TaskRow
                         key={task.id}
                         task={task}
+                        onToggle={toggleTask}
                     />
                 ))}
             </ul>

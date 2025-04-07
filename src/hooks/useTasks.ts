@@ -11,16 +11,28 @@ export function useTasks() {
         const newTask: Task = {
             id: String(Date.now()),
             text: input.trim(),
+            completed: false,
         };
 
         setTasks(prev => [...prev, newTask]);
         setInput('');
     };
 
+    const toggleTask = (id: string) => {
+        setTasks(prev =>
+            prev.map(task =>
+                task.id === id
+                    ? { ...task, completed: !task.completed }
+                    : task
+            )
+        );
+    };
+
     return {
         tasks,
         input,
         setInput,
-        addTask
+        addTask,
+        toggleTask
     };
 }
