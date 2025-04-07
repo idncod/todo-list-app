@@ -15,7 +15,12 @@ Testing
 ```bash
 npm run test
 ```
-or in live  watch mode
+or in live watch mode - re-runs on file changes
+```bash
+npm run test:watch
+```
+
+or run Vitest manually
 ```bash
 npx vitest
 ```
