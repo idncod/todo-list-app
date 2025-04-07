@@ -1,0 +1,59 @@
+@use '../../styles/variables' as *;
+
+.taskRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $color-surface;
+  border: 1px solid $color-border;
+  padding: $spacing-sm $spacing-md;
+  border-radius: $border-radius;
+  box-shadow: $shadow-sm;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+
+  &:hover {
+    background-color: #f0f0f5;
+    transform: scale(1.01);
+  }
+}
+
+.leftSection {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  flex: 1;
+}
+
+.checkbox {
+  width: 20px;
+  height: 20px;
+  accent-color: $color-primary;
+  cursor: pointer;
+}
+
+.text {
+  font-size: $font-size-base;
+  word-break: break-word;
+  transition: color 0.2s ease;
+
+  &.completed {
+    text-decoration: line-through;
+    color: $color-muted;
+  }
+}
+
+.deleteButton {
+  background-color: transparent;
+  border: none;
+  color: $color-error;
+  font-weight: bold;
+  font-size: $font-size-sm;
+  cursor: pointer;
+  padding: $spacing-xs $spacing-sm;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: rgba($color-error, 0.08);
+  }
+}
