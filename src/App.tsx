@@ -1,9 +1,11 @@
+import TaskList from './components/TaskList/TaskList.tsx';
 
 function App() {
 
   return (
     <>
-      Hi
+      <h1>TO-DO:</h1>
+        <TaskList />
     </>
   )
 }
