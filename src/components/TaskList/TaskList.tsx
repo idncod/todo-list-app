@@ -1,19 +1,29 @@
 import React from "react";
 import TaskRow from "../TaskRow/TaskRow.tsx";
+import {useTasks} from "../../hooks/useTasks.ts";
 
 const TaskList: React.FC = () => {
+    const { tasks, input, setInput, addTask } = useTasks();
 
     return (
         <div>
             <div>
                 <input type="text"
+                       value={input}
                        placeholder="Add Task"
+                       onChange={(e) => setInput(e.target.value)}
+                       onKeyDown={(e) => e.key === 'Enter' && addTask()}
                 />
-                <button>Add Task</button>
+                <button onClick={addTask}>Add Task</button>
             </div>
 
             <ul>
-                    <TaskRow />
+                {tasks.map((task) => (
+                    <TaskRow
+                        key={task.id}
+                        task={task}
+                    />
+                ))}
             </ul>
         </div>
     )
