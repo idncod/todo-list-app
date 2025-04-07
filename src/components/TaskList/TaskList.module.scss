@@ -1,0 +1,64 @@
+@use '../../styles/variables' as *;
+
+.wrapper {
+  background: #ffffff;
+  padding: $spacing-lg;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.3s ease;
+  max-width: 100%;
+}
+
+.inputGroup {
+  display: flex;
+  gap: $spacing-sm;
+  margin-bottom: $spacing-md;
+
+  @media (max-width: $breakpoint-sm) {
+    flex-direction: column;
+  }
+}
+
+.input {
+  flex: 1;
+  padding: $spacing-sm $spacing-md;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #fafafa;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+
+  &:focus {
+    border-color: #7b61ff;
+    box-shadow: 0 0 0 2px rgba(123, 97, 255, 0.2);
+    outline: none;
+  }
+}
+
+.button {
+  padding: $spacing-sm $spacing-md;
+  background-color: #7b61ff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+
+  &:hover {
+    background-color: #654ed8;
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.taskList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: $spacing-sm;
+}
