@@ -1,7 +1,7 @@
 import React from 'react';
 import { TaskRowProps } from "../../types/task.ts";
 
-const TaskRow: React.FC<TaskRowProps> = ({task, onToggle}) => {
+const TaskRow: React.FC<TaskRowProps> = ({task, onToggle, onDelete}) => {
     return(
         <li>
             <input
@@ -10,7 +10,7 @@ const TaskRow: React.FC<TaskRowProps> = ({task, onToggle}) => {
                 onChange={() => onToggle(task.id)}
             />
             <span>{task.text}</span>
-            <button>Delete</button>
+            <button onClick={() => onDelete(task.id)}>Delete</button>
         </li>
 
 

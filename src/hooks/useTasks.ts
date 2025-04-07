@@ -28,11 +28,16 @@ export function useTasks() {
         );
     };
 
+    const deleteTask = (id: string) => {
+        setTasks(prev => prev.filter(task => task.id !== id));
+    };
+
     return {
         tasks,
         input,
         setInput,
         addTask,
-        toggleTask
+        toggleTask,
+        deleteTask
     };
 }

@@ -7,4 +7,5 @@ export interface Task {
 export interface TaskRowProps {
     task: Task;
     onToggle: (id: string) => void;
+    onDelete: (id: string) => void;
 }
