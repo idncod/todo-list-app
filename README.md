@@ -7,7 +7,15 @@ Installation
 ```bash
 git clone https://github.com/idncod/todo-list-app.git
 cd todo-list-app
-pnpm install
-pnpm dev
+npm install
+npm run dev
 ```
 
+Testing
+```bash
+npm run test
+```
+or in live  watch mode
+```bash
+npx vitest
+```
